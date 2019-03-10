@@ -1,0 +1,35 @@
+<div class="container">
+    <h1>{{ pageTitle }}</h1>
+
+    <div class="card">
+        <h5 class="card-header bg-dark">Form validation</h5>
+        <div class="card-body">
+          <form [formGroup]="form" (ngSubmit)="onSubmit()">
+            <div class="form-group">
+              <label for="exampleInputEmail1">Email address</label>
+              <input type="email" class="form-control" placeholder="Enter email" formControlName="email" [ngClass]="{'is-invalid': form.get('email').invalid && form.get('email').touched}">
+              <div *ngIf="form.get('email').invalid && form.get('email').touched" class="invalid-feedback">
+                Email address is invalid.
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Password</label>
+              <input type="password" class="form-control" placeholder="Password" formControlName="password" [ngClass]="{'is-invalid': form.get('password').invalid && form.get('password').touched}">
+              <div *ngIf="form.get('password').invalid && form.get('password').touched" class="invalid-feedback">
+                Password is invalid.
+              </div>
+            </div>
+            <div class="form-group form-check">
+              <input type="checkbox" class="form-check-input" id="exampleCheck1" formControlName="agree">
+              <label class="form-check-label" for="exampleCheck1">I agree to terms</label>
+            </div>
+            <button type="submit" class="btn btn-success"
+            [disabled]="form.invalid"
+            >Submit</button>
+          </form>
+        </div>
+      </div>
+
+    
+</div>
+

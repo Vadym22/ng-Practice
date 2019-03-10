@@ -1,0 +1,57 @@
+<div class="container">
+  <h1>{{ pageTitle }}</h1>
+
+  <div class="card">
+    <h5 class="card-header bg-dark">Two-way binding</h5>
+    <div class="card-body">
+      <h6 class="card-title">Change page title:</h6>
+      <div class="form-group">
+        <input class="form-control" [(ngModel)]="pageTitle" placeholder="page title">
+      </div>
+    </div>
+  </div>
+
+  <app-basic-child [(pageTitle)]="pageTitle"></app-basic-child>
+
+  <div class="card">
+    <h5 class="card-header bg-dark">Attribute Directives</h5>
+    <div class="card-body">
+      <h6 class="card-title">ngClass:</h6>
+      <p class="card-text" [ngClass]="{bold:toggleBold}">
+        <button (click)="toggleClass()" class="btn btn-primary">Toggle class</button>
+        Toggle my font-weight by class</p>
+      <h6 class="card-title">ngStyle:</h6>
+      <p class="card-text" [ngStyle]="{'font-style':'italic', 'font-size':'12px'}">
+        Text styled by ngStyle</p>
+      <h6 class="card-title">Custom directive:</h6>
+      <p class="card-text" appUnderline>
+        Text styled by custom directive 'appUnderline'</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <h5 class="card-header bg-dark">Structural Directives</h5>
+    <div class="card-body">
+      <h6 class="card-title">ngIf:</h6>
+      <p class="card-text">
+        <button (click)="toggleHello()" class="btn btn-primary">Toggle</button>
+        <span *ngIf='hello'> Hello!</span><span *ngIf='!hello'> Good bye!</span></p>
+      <h6 class="card-title">ngFor:</h6>
+      <span *ngFor='let item of items; let i = index' class="card-text">{{ i + 1 }}) {{ item }}; </span>
+    </div>
+  </div>
+
+  <div class="card">
+    <h5 class="card-header bg-dark">Pipes</h5>
+    <div class="card-body">
+      <h6 class="card-title">DatePipe with UppercasePipe (chaining):</h6>
+      <p class="card-text">
+        <button (click)="toggleFormat()" class="btn btn-primary">Toggle Format</button>
+        {{ currentDate | date:format | uppercase }}</p>
+      <h6 class="card-title">CurrencyPipe:</h6>
+      <p class="card-text">{{ number | currency }}</p>
+      <h6 class="card-title">Custome pipe - 'cube' (for {{ number }}):</h6>
+      <p class="card-text">{{ number | cube }}</p>
+    </div>
+  </div>
+</div>

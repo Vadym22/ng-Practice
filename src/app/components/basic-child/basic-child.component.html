@@ -1,0 +1,11 @@
+<div class="card">
+  <h5 class="card-header bg-dark">Child component: @Input() / @Output()</h5>
+  <div class="card-body">
+    <h6 class="card-title">Page title:</h6>
+    <p class="card-text">{{ pageTitle }}</p>
+    <h6 class="card-title">Change page title (from child component):</h6>
+    <div class="form-group">
+      <input [(ngModel)]="pageTitle" (ngModelChange)="onTitleChange($event)" class="form-control" placeholder="page title">
+    </div>
+  </div>
+</div>

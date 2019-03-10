@@ -1,0 +1,59 @@
+/* You can add global styles to this file, and also import other style files */
+body{
+    color: #222;
+}
+.header{
+    padding: 15px;
+    color: #fff;
+}
+.header > .container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+h1{
+    color: #000;
+}
+h6{
+    font-weight: 700;
+}
+
+.bold{
+    font-weight: 700;
+}
+
+.card{
+    margin-top: 30px;
+}
+.card-header{
+    color: #fff;
+}
+
+.header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.nav-link{
+    color: #fff;
+}
+.nav-link + .nav-link{
+    margin-left: 15px;
+}
+.nav-link:hover{
+    color: coral;
+}
+.nav-link.btn-active{
+    color: coral;
+}
+
+.nav span{
+    display: flex;
+    align-items: center;
+    margin-left: 15px;
+}
+
+.invalid-feedback{
+    display: block;
+}
